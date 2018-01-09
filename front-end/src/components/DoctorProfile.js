@@ -68,7 +68,7 @@ class DoctorProfile extends Component{
             	
             	<tr>
                     <th>{(doctor[0].phoneArray.length === 1) ? ('Phone :') : ('Phones :')}</th>
-                    <td>{phones.map((phone, index)=>{return <li>{phone}</li>})}</td>
+                    <td>{phones.map((phone, index)=>{return <li key={index}>{phone}</li>})}</td>
             	</tr>
 
 

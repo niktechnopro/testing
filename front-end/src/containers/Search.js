@@ -16,14 +16,15 @@ class Search extends React.Component {
   
   handleSubmit(event){
   	event.preventDefault()
+    var fadeIn = document.getElementsByClassName('hidden')[0];
+    fadeIn.classList.add('fadein');
     var location = event.target[0].value;
     var insurance = event.target[1].value;
     var specialty = event.target[2].value;
     var resultsNumber = event.target[3].value;
 //now we have to extract uid from insurance.js and specialties.js
+    fadeIn.classList.add('fadein');
     this.props.searchAction(location, insurance, specialty);
-
-
   }
 
   // to clear storage on load
@@ -32,9 +33,9 @@ class Search extends React.Component {
   // }  
 
     componentDidUpdate(){ 
+    var fadeIn = document.getElementsByClassName('hidden')[0];
     let data = this.props.drData.data;
-
-
+    fadeIn.classList.remove('fadein');
     // console.log("componentDidUpdate fired up", data) 
     if (data.msg === 'success'){
       let doctorJSON = JSON.stringify(data.doctors);
@@ -45,7 +46,6 @@ class Search extends React.Component {
     }else{
       console.log("Search combination of Insurance and Doctor Specialty is incorrect");
     }
-    this.props.drData.data.msg = undefined
   }
 
   render() {
@@ -62,7 +62,6 @@ class Search extends React.Component {
         <h2 className="message center">
           Let's find you a doctor!
           </h2>
-         
           <form className="search-box z-depth-5 row center" onSubmit={this.handleSubmit}>
             <div className="col s12 inputs center">Your Location
               
@@ -83,7 +82,7 @@ class Search extends React.Component {
           {(msg === "badSearch") && 
           <img src="/images/no-result.png"  />}
           {(msg === "success") && <Link to="/doctors"><img src="/images/results.png" /></Link>}
-          
+          <h3 className="hidden">Searching...Please Wait</h3>
         </div>
     );
   }

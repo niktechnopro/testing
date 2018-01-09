@@ -4,6 +4,7 @@ import DoctorMap from '../components/DoctorMap'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import SelectMarker from '../actions/SelectMarker';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class SearchResults extends Component{
 	constructor(){
@@ -78,9 +79,11 @@ class SearchResults extends Component{
 				<div className="results-wrapper">
 					<div className="row">
 						<div className="col s7 big-box">
+						<ReactCSSTransitionGroup transitionName="anim" transitionAppear={true} transitionEnterTimeout={5000} transitionEnter={true} transitionLeave={false}>
 								{doctors.map((doctor, index)=>{
 									return <DoctorResults key={index} profile={doctor} oneDoctorMarker = {this.mouseAction} />
 								})}{/*we are closing .map and then JS expression here*/}
+							</ReactCSSTransitionGroup>
 							</div>
 							<div className="col s5 map">
 							{console.log(myLocation)}

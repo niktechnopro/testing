@@ -9,6 +9,7 @@
     "materialize-autocomplete": "^1.0.7",
     "materialize-css": "^0.100.2",
     "react": "^16.2.0",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-autosuggest": "^9.3.2",
     "react-dom": "^16.2.0",
     "react-google-maps": "^9.4.3",

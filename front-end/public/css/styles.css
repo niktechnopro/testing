@@ -135,3 +135,22 @@ input:-webkit-autofill:active {
   background: rgba(0, 0, 0, 0.6); }
 
 /*# sourceMappingURL=styles.css.map */
+/*this is for showing searching...*/
+.hidden{
+  display: none;
+  transition: 0.5s;
+}
+
+.fadein{
+  color: black;
+  display: block;
+}
+
+.anim-enter {
+  opacity: 0.01;
+}
+ 
+.anim-enter.anim-enter-active {
+  opacity: 2;
+  transition: opacity 5s ease-in;
+}
