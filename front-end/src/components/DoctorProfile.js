@@ -19,7 +19,16 @@ class DoctorProfile extends Component{
             return doc.id == doctorid
         })
         //we have to iterate through phone array and format each phone and then return it back
-        var phones = doctor[0].phoneArray.map((phone, index)=>{
+        //filtering for duplicates
+        let step1 = doctor[0].phoneArray.filter((phone, index)=>{
+            return phone.type !== "business_fax"
+        })
+
+        let step2 = step1.filter((phone)=>{
+            return phone.type !== "business_landline"
+        })
+
+        var phones = step2.map((phone, index)=>{
             let phoneArray = []
             let number = phone.number;
             let type = phone.type;
