@@ -6,7 +6,7 @@ export default ((location, insurance, specialty, resultsNumber)=>{
 	console.log("search action fired up with data: ");
   //1st extracting insuranceUid
   const insuranceUid = (insurance) => {
-      for (let i=0; i<= Insurance.length; i++){ 
+      for (let i=0; i< Insurance.length; i++){ 
         if(insurance === Insurance[i].Network){
           console.log(insurance)
           return Insurance[i].uid
@@ -15,7 +15,7 @@ export default ((location, insurance, specialty, resultsNumber)=>{
   }
   // 2nd extracting specialty Uid
   const specialtyUid = (specialty) => {
-    for (let i=0; i<= Specialty.length; i++){
+    for (let i=0; i< Specialty.length; i++){
       if(specialty === Specialty[i].name){
         return Specialty[i].uid;
       }

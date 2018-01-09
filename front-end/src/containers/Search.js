@@ -27,6 +27,19 @@ class Search extends React.Component {
     this.props.searchAction(location, insurance, specialty);
   }
 
+  // componentWillReceiveProps(nextProps){
+  //   if (nextProps.drData.data.msg === this.props.drData.data.msg){
+  //     console.log('message 1', nextProps)
+  //     this.setState({
+  //       className : 'hidden'
+  //     })
+  //   }else{
+  //     console.log('message 2', nextProps)
+  //     this.setState({
+  //       className : ''
+  //     })
+  //   } 
+  // }
   // to clear storage on load
   // componentWillMount(){
   //   sessionStorage.clear();
