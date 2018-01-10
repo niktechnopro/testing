@@ -146,11 +146,12 @@ input:-webkit-autofill:active {
   display: block;
 }
 
-.anim-enter {
-  opacity: 0.01;
+/*starting fase of animation*/
+.fade-enter {
+  opacity: 0;
 }
  
-.anim-enter.anim-enter-active {
-  opacity: 2;
-  transition: opacity 5s ease-in;
+.fade-enter-active {
+  opacity: 1;
+  transition: 2s ease-in all;
 }

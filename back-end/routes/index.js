@@ -163,11 +163,16 @@ router.post('/search', function(req, res, next){
 					// console.log('line 51 in index.js', localDoctor.localDoctorSelector(drData.data))
 					console.log("doctor: ", doctors);
 					// building data to send back
-	        		res.json({
-	        			msg: "success",
-	        			doctors: doctors,
-	        			mylocation: geodata
-	        			})
+	        		if (doctors.length > 0){
+		        		res.json({
+		        			msg: "success",
+		        			doctors: doctors,
+		        			mylocation: geodata
+		        			})
+		        		}else{
+		        			console.log("no results for your search")
+	        				res.json({msg: "badSearch"});
+		        		}
 	        		}else{
 	        			console.log("no results for your search")
 	        			res.json({msg: "badSearch"});

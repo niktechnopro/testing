@@ -28,32 +28,36 @@ const localDoctorSelector = (drdata)=>{
 		//some doctors have multiple locations
 		console.log('doctor with id: ', id, "has: ", locations.length, "local locations");
 		let location = locations[0];
-		if (location.visit_address.street2 !== undefined){
-			var address = location.visit_address.street + ' ' + location.visit_address.street2;
-		}else{
-			address = location.visit_address.street;
-		}
-		var docprofile = {
-		id : id,
-		fullName : fullName,
-		visitAddress : address,
-		city : location.visit_address.city,
-		state : location.visit_address.state_long,
-		zip : location.visit_address.zip,
-		phoneArray : location.phones,
-		lat : location.lat,
-		lng : location.lon,
-		
-		photo : doctor.profile.image_url,
-		uid: location.uid,
-		bio: doctor.profile.bio,
-		specialty: doctor.profile.specialty,
-		name: location.name,
-		distance: location.distance,
-		website: location.website
-
+		if (location !== undefined && location.distance < radius){
+			if (location.visit_address.street2 !== undefined){
+				var address = location.visit_address.street + ' ' + location.visit_address.street2;
+			}else{
+				address = location.visit_address.street;
 			}
-		doctorArray.push(docprofile);
+			var docprofile = {
+			id : id,
+			fullName : fullName,
+			visitAddress : address,
+			city : location.visit_address.city,
+			state : location.visit_address.state_long,
+			zip : location.visit_address.zip,
+			phoneArray : location.phones,
+			lat : location.lat,
+			lng : location.lon,
+			
+			photo : doctor.profile.image_url,
+			uid: location.uid,
+			bio: doctor.profile.bio,
+			specialty: doctor.profile.specialty,
+			name: location.name,
+			distance: location.distance,
+			website: location.website
+
+				}
+			doctorArray.push(docprofile);
+		}else{
+			return
+		}
 		// console.log(doctorArray[index].fullName, doctorArray[index].visitAddress)
 	});
 	// console.log('from local doctor search', doctorArray)
