@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import SearchAction from '../actions/SearchAction';
 import Insurance from '../components/Insurance';
 import { Link } from 'react-router-dom';
-
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
  
 
 class Search extends React.Component {
@@ -70,11 +70,22 @@ class Search extends React.Component {
       var msg = this.props.drData.data.msg
       // console.log("our message", msg)
     }  
+
+    const transitionOptions = {
+      transitionName : "fade",
+      transitionEnterTimeout : 500,
+      transitionLeaveTimeout : 500,
+    }
+
+    // <ReactCSSTransitionGroup {...transitionOptions}>
+    // </ReactCSSTransitionGroup>
     return (
-      <div className="container center search-container col s12">
-        <h2 className="message center">
+      <div className="container center search-container col s12 slide">
+      
+          <h2 className="message center slide">
           Let's find you a doctor!
           </h2>
+        
           <form className="search-box z-depth-5 row center" onSubmit={this.handleSubmit}>
             <div className="col s12 inputs center">Your Location
               
@@ -95,7 +106,7 @@ class Search extends React.Component {
           {(msg === "badSearch") && 
           <img src="/images/no-result.png"  />}
           {(msg === "success") && <Link to="/doctors"><img src="/images/results.png" /></Link>}
-          <h3 className="hidden">Searching...Please Wait</h3>
+          <h3 className="hidden slide">Searching...Please Wait</h3>
         </div>
     );
   }

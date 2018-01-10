@@ -73,30 +73,29 @@ class SearchResults extends Component{
 			selectdoctors = doctors;
 		}
 
-		const transitionOptions = {
-			transitionName : "fade",
-			transitionEnterTimeout : 500,
-			transitionLeaveTimeout : 500,
-		}
-
-
+	
 		return(
-
+				
 				<div className="results-wrapper">
 					<div className="row">
-						<div className="col s7 big-box">
-							<ReactCSSTransitionGroup {...transitionOptions}>
+						<div className="col s7 big-box slide">
+						
 								{doctors.map((doctor, index)=>{
 									return <DoctorResults key={index} profile={doctor} oneDoctorMarker = {this.mouseAction} />
 								})}{/*we are closing .map and then JS expression here*/}
-							</ReactCSSTransitionGroup>
+							
 							</div>
-							<div className="col s5 map">
+							
+							<div className="col s5 map slide">
+							
 							{console.log(myLocation)}
 								<DoctorMap hoverFunc={this.hover} mouseOut={this.onMouseOut} doctors={selectdoctors} myloc={myLocation} />
+							
 							</div>
+							
 					</div>
 				</div>
+
 		)
 	}
 }

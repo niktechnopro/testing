@@ -11,22 +11,13 @@ class Home extends Component{
 		return(
 			
 			<div className='row'>
-			<div className='col m12 offset-m4 title-head justify'>
+			<div className='col m12 offset-m4 title-head justify slide'>
 
 			<div>Welcome to LocDoc</div>
 			</div>
 			<div className="col m5 offset-m6 search-box-home z-depth-5">
 			<Search />
 			</div>
-
-			
-			
-
-			
-			
-
-
-			
 			</div>
 			
 			

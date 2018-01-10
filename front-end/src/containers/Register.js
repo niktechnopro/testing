@@ -132,7 +132,7 @@ class Register extends Component{
     document.body.style.backgroundSize = 'cover'
 
 	return(
-        <div className = "register">
+        <div className = "register slide">
             
 
          <form  className='col s12 register-form z-depth-5' onSubmit={this.handleSubmit}>

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
  
 class DoctorResults extends Component{
+
 
 	mouseHandler(info,offOrOn){
 		console.log(info, offOrOn)
@@ -12,8 +13,6 @@ class DoctorResults extends Component{
 			this.props.oneDoctorMarker('')
 		}
 	}
-
-
 
 	render(){
 		// console.log(this.props.profile);
@@ -28,9 +27,11 @@ class DoctorResults extends Component{
 			lng : profile.lng,
 			id: profile.id
 		}
+
 		// console.log("this many phones in practice", phones)
 		// console.log(profile.phoneArray)
 			return(
+
 			<div id={`doctor-${profile.visitAddress}`}>	
 			<div className="row doc">
 				<div className="doctor-results-box col s12">

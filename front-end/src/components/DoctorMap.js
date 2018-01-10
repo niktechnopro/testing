@@ -26,7 +26,7 @@ const MyMapComponent = compose(
   withGoogleMap
 )((props) =>
   <GoogleMap
-    defaultZoom={11}
+    defaultZoom={12}
     defaultCenter={{ lat: props.myloc.lat, lng: props.myloc.lng}}
     options={{streetViewControl: false}}
 

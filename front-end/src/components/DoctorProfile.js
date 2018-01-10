@@ -42,7 +42,7 @@ class DoctorProfile extends Component{
         console.log(phones)
 
         return(
-			<div className="container profile-box z-depth-4">
+			<div className="container profile-box z-depth-4 slide">
         
         <div className="page-header">
             <h4>{doctor[0].fullName}</h4>
