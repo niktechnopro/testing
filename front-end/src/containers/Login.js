@@ -97,7 +97,7 @@ class Login extends Component {
 
   render () {
     return (
-      <div className = "login slide">
+      <div className = "login slide2">
       <form className="col s12 login-form"  onSubmit={this.handleSubmit}>
         <h5>Log In Below</h5>
         

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 class NavBar extends Component{
 	render(){
 		return(
-		<div className="navbar-fixed slide slide">
+		<div className="navbar-fixed slide">
 
 		    <nav className="navbar-material">
 		      <div className="nav-wrapper  deep-purple accent-4 row">

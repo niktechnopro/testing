@@ -78,7 +78,7 @@ class SearchResults extends Component{
 				
 				<div className="results-wrapper">
 					<div className="row">
-						<div className="col s7 big-box slide">
+						<div className="col s7 big-box slide2">
 						
 								{doctors.map((doctor, index)=>{
 									return <DoctorResults key={index} profile={doctor} oneDoctorMarker = {this.mouseAction} />
